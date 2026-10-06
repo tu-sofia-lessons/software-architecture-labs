@@ -13,6 +13,6 @@ jobs:
         with:
           python-version: "3.12"
       - name: Run the week's check
-        working-directory: ${{ github.ref_name }}
         run: |
+          cd "${GITHUB_REF_NAME:0:7}"          # week-NN, also for week-NN-punch
           if [ -f verify.py ]; then python verify.py; else python ladder.py; fi
