@@ -4,9 +4,10 @@ API (v1):
     GET /courses/<id>/materials          -> 200 {"files": ["lecture01.txt", ...]}
     GET /courses/<id>/materials/<name>   -> 200 <bytes>   | 404
     PUT /courses/<id>/materials/<name>   -> 201           (body = file bytes)
+API v2 (--v2):  GET /courses/<id>/materials -> {"files": [{"name": "...", "size": 123}, ...]}
 
 Usage:
-    python file_server.py [--port 8102] [--root server_files] [--delay SECONDS]
+    python file_server.py [--port 8102] [--root server_files] [--delay SECONDS] [--v2]
 """
 import sys
 if sys.version_info < (3, 10):
@@ -31,6 +32,7 @@ class Handler(BaseHTTPRequestHandler):
     protocol_version = "HTTP/1.1"
     root = Path("server_files")
     delay = 0.0
+    v2 = False
 
     def _send(self, status, body=b"", content_type="application/json"):
         self.send_response(status)
@@ -49,7 +51,10 @@ class Handler(BaseHTTPRequestHandler):
         if m := LIST.match(self.path):
             folder = self.root / f"course_{m[1]}"
             files = sorted(p for p in folder.iterdir() if p.is_file()) if folder.exists() else []
-            payload = {"files": [p.name for p in files]}
+            if self.v2:
+                payload = {"files": [{"name": p.name, "size": p.stat().st_size} for p in files]}
+            else:
+                payload = {"files": [p.name for p in files]}
             return self._send(200, json.dumps(payload).encode())
         if (m := FILE.match(self.path)) and (path := self._file(m[1], m[2])) and path.is_file():
             return self._send(200, path.read_bytes(), "application/octet-stream")
@@ -75,11 +80,12 @@ def main():
     parser.add_argument("--port", type=int, default=8102)
     parser.add_argument("--root", default=str(Path(__file__).parent / "server_files"))
     parser.add_argument("--delay", type=float, default=0.0)
+    parser.add_argument("--v2", action="store_true")
     args = parser.parse_args()
-    Handler.root, Handler.delay = Path(args.root), args.delay
+    Handler.root, Handler.delay, Handler.v2 = Path(args.root), args.delay, args.v2
     server = ThreadingHTTPServer(("127.0.0.1", args.port), Handler)
     print(f"File server on http://127.0.0.1:{args.port}  root={args.root}  "
-          f"api=v1  delay={args.delay}s", flush=True)
+          f"api={'v2' if args.v2 else 'v1'}  delay={args.delay}s", flush=True)
     try:
         server.serve_forever()
     except KeyboardInterrupt:
