@@ -5,7 +5,7 @@
 ## Веднъж в началото
 
 1. Горе вдясно: **Use this template** → **Create a new repository**.
-2. Собственик: вашият профил. Име: `sa-labs-fnXXXXX`. Видимост: **Private**. Не отбелязвайте „Include all branches“.
+2. Собственик: вашият профил. Име: `sa-labs-fnXXXXX`. Видимост: **Private**. Отбележете „Include all branches“.
 3. **Settings** → **Collaborators** → **Add people** → `igergow`.
 4. В новото ви хранилище: **Code** → **Codespaces** → **Create codespace on main**.
 5. В Moodle, в заданието „Хранилище за упражненията“, поставете линка към хранилището.
@@ -14,15 +14,16 @@
 
 ## Всяка седмица
 
-В терминала на Codespace-а (за седмица 2 сменете `01` с `02` и т.н.):
+Седмица 1 вече е в хранилището ви: `git switch week-01` и `cd week-01`.
+
+От седмица 2 нататък, в терминала на Codespace-а (за седмица 3 сменете `02` с `03` и т.н.):
 
 ```
 git remote add upstream https://github.com/tu-sofia-lessons/software-architecture-labs.git   # само първия път
 git fetch upstream
-git switch -c week-01 upstream/week-01
-git push -u origin week-01
-cd week-01
-python ladder.py
+git switch -c week-02 upstream/week-02
+git push -u origin week-02
+cd week-02
 ```
 
 Работите в клона на седмицата и пазите с `git add`, `git commit`, `git push`. Седмиците са независими: нищо не се пренася от предишната.
@@ -40,7 +41,7 @@ The code for each lab is in its own branch: `week-01`, `week-02` and so on. A br
 ## Once, at the start
 
 1. Top right: **Use this template** → **Create a new repository**.
-2. Owner: your account. Name: `sa-labs-fnXXXXX`. Visibility: **Private**. Do not tick "Include all branches".
+2. Owner: your account. Name: `sa-labs-fnXXXXX`. Visibility: **Private**. Tick "Include all branches".
 3. **Settings** → **Collaborators** → **Add people** → `igergow`.
 4. In your new repository: **Code** → **Codespaces** → **Create codespace on main**.
 5. In Moodle, in the assignment "Lab repository", paste the link to your repository.
@@ -49,15 +50,16 @@ Nothing to install: only Python is needed, and the Codespace already has it.
 
 ## Every week
 
-In the Codespace terminal (for week 2 change `01` to `02` and so on):
+Week 1 is already in your repository: `git switch week-01` and `cd week-01`.
+
+From week 2 on, in the Codespace terminal (for week 3 change `02` to `03` and so on):
 
 ```
 git remote add upstream https://github.com/tu-sofia-lessons/software-architecture-labs.git   # first time only
 git fetch upstream
-git switch -c week-01 upstream/week-01
-git push -u origin week-01
-cd week-01
-python ladder.py
+git switch -c week-02 upstream/week-02
+git push -u origin week-02
+cd week-02
 ```
 
 You work in the week's branch and save with `git add`, `git commit`, `git push`. The weeks are independent: nothing carries over from the previous one.
