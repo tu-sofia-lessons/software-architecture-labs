@@ -5,8 +5,10 @@
 ## Веднъж в началото
 
 1. Горе вдясно: **Use this template** → **Create a new repository**.
-2. Собственик: вашият профил. Видимост: **Private**. Не отбелязвайте „Include all branches“.
-3. В новото ви хранилище: **Code** → **Codespaces** → **Create codespace on main**.
+2. Собственик: вашият профил. Име: `sa-labs-fnXXXXX`. Видимост: **Private**. Не отбелязвайте „Include all branches“.
+3. **Settings** → **Collaborators** → **Add people** → `igergow`.
+4. В новото ви хранилище: **Code** → **Codespaces** → **Create codespace on main**.
+5. В Moodle, в заданието „Хранилище за упражненията“, поставете линка към хранилището.
 
 Нищо не се инсталира: нужен е само Python, а той вече е в Codespace-а.
 
@@ -27,7 +29,7 @@ python ladder.py
 
 ## Предаване
 
-Свалете папката на седмицата като zip с име `fnXXXXX_wNN.zip` (вашият факултетен номер и седмицата) и го качете в Moodle. В Codespace: десен бутон върху папката → **Download...**
+С `git commit` и `git push` в клона на седмицата. Броят се вашите commit-и до срока (24 ч след упражнението). При всеки push GitHub пуска проверката на седмицата: вижда се в **Actions**. Подробно: страницата „Как работим по упражненията“ в Moodle.
 
 ---
 
@@ -38,8 +40,10 @@ The code for each lab is in its own branch: `week-01`, `week-02` and so on. A br
 ## Once, at the start
 
 1. Top right: **Use this template** → **Create a new repository**.
-2. Owner: your account. Visibility: **Private**. Do not tick "Include all branches".
-3. In your new repository: **Code** → **Codespaces** → **Create codespace on main**.
+2. Owner: your account. Name: `sa-labs-fnXXXXX`. Visibility: **Private**. Do not tick "Include all branches".
+3. **Settings** → **Collaborators** → **Add people** → `igergow`.
+4. In your new repository: **Code** → **Codespaces** → **Create codespace on main**.
+5. In Moodle, in the assignment "Lab repository", paste the link to your repository.
 
 Nothing to install: only Python is needed, and the Codespace already has it.
 
@@ -60,4 +64,4 @@ You work in the week's branch and save with `git add`, `git commit`, `git push`.
 
 ## Submission
 
-Download the week's folder as a zip named `fnXXXXX_wNN.zip` (your faculty number and the week) and upload it to Moodle. In the Codespace: right-click the folder → **Download...**
+With `git commit` and `git push` in the week's branch. Your commits up to the deadline count (24 h after the lab). On every push GitHub runs the week's check: see the **Actions** tab. Details: the page "How we work in the labs" in Moodle.
