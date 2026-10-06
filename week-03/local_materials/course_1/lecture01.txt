@@ -1,0 +1,2 @@
+SA101 Lecture 1: What is software architecture?
+Architecture = the decisions that are expensive to change.
