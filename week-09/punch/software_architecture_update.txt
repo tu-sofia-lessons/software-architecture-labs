@@ -1,0 +1,4 @@
+Title: Software Architecture
+Updated: 2026-09-01
+
+From the 2026/27 academic year, to pass Software Architecture students must attend at least 80% of the practical labs and achieve a final grade of at least 3.00.
