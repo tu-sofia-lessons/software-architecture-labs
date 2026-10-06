@@ -1,0 +1,6 @@
+Title: Artificial Intelligence
+Updated: 2026-02-01
+
+Artificial Intelligence (AI201) is taught by Prof. Kolev. The course has only two lab groups, so places are limited.
+
+Students should complete Programming 2 before taking Artificial Intelligence. The assessment is a group project and an oral exam.

@@ -1,0 +1,10 @@
+Title: Software Architecture
+Updated: 2026-02-01
+
+Software Architecture (SA101) is taught by Prof. Stoyanova. The course has weekly lectures and ten practical labs.
+
+To pass Software Architecture, students must attend at least 70% of the practical labs and achieve a final grade of at least 3.00.
+
+The final grade is made of 40% practical labs and 60% final exam. The final exam has 30 multiple-choice questions and lasts 90 minutes.
+
+AI tools are allowed in the labs, but every student must defend their lab work orally.
