@@ -1,0 +1,6 @@
+Title: Databases
+Updated: 2026-02-01
+
+Databases (DB150) is taught by Dr. Marinov. The course covers relational modelling, SQL and transactions.
+
+To complete Databases, students submit a course project and take a written exam. The exam requires at least 50% of the points.
